@@ -464,9 +464,10 @@ class Serial(SerialBase, PlatformSpecific):
                     # Disconnected devices, at least on Linux, show the
                     # behavior that they are always ready to read immediately
                     # but reading returns nothing.
-                    raise SerialException(
-                        'device reports readiness to read but returned no data '
-                        '(device disconnected or multiple access on port?)')
+                    #raise SerialException(
+                    #    'device reports readiness to read but returned no data '
+                    #    '(device disconnected or multiple access on port?)')
+                    pass
                 read.extend(buf)
             except OSError as e:
                 # this is for Python 3.x where select.error is a subclass of
